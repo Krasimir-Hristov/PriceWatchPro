@@ -2,14 +2,22 @@
 
 import { Dialog, Transition } from '@headlessui/react';
 import Image from 'next/image';
-import { useState, Fragment } from 'react';
+import { useState, Fragment, FormEvent } from 'react';
 
 const Modal = () => {
   let [isOpen, setIsOpen] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [email, setEmail] = useState('');
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    setIsSubmitting(true);
+
+    setIsSubmitting(false);
+    setEmail('');
+    closeModal();
+  };
 
   const openModal = () => setIsOpen(true);
   const closeModal = () => setIsOpen(false);
