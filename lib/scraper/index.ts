@@ -67,7 +67,7 @@ export async function scrapedAmazonProduct(url: string) {
       currentPrice: Number(currentPrice) || Number(originalPrice),
       originalPrice: Number(originalPrice) || Number(currentPrice),
       priceHistory: [],
-      discountRate: Number(discountRate),
+      // discountRate: Number(discountRate),
       category: 'category',
       reviewsCount: 100,
       stars: 4.5,
@@ -75,10 +75,7 @@ export async function scrapedAmazonProduct(url: string) {
       description,
       lowestPrice: Number(currentPrice) || Number(originalPrice),
       highestPrice: Number(originalPrice) || Number(currentPrice),
-      average:
-        (Number(originalPrice) + Number(currentPrice)) / 2 ||
-        Number(currentPrice) ||
-        Number(originalPrice),
+      average: Number(originalPrice) || Number(currentPrice),
     };
 
     return data;
