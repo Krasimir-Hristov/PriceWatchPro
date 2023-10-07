@@ -6,7 +6,8 @@ export const connectToDB = async () => {
   mongoose.set('strictQuery', true);
 
   if (!process.env.MONGODB_URI) {
-    return console.log('MONGODB_URI is not defined!');
+    console.log('MONGODB_URI is not defined!');
+    return;
   }
 
   if (isConnected) {
@@ -22,5 +23,3 @@ export const connectToDB = async () => {
     console.log(error);
   }
 };
-
-//7AAPMLnyXSbmm2Lu
