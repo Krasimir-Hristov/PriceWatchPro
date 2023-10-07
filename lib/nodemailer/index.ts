@@ -3,8 +3,6 @@
 import { EmailContent, EmailProductInfo, NotificationType } from '@/types';
 import nodemailer from 'nodemailer';
 
-export const THRESHOLD_PERCENTAGE = 40;
-
 const Notification = {
   WELCOME: 'WELCOME',
   CHANGE_OF_STOCK: 'CHANGE_OF_STOCK',
@@ -86,7 +84,7 @@ const transporter = nodemailer.createTransport({
   service: 'hotmail',
   port: 2525,
   auth: {
-    user: 'javascriptmastery@outlook.com',
+    user: 'krasimir.xristov@outlook.com',
     pass: process.env.EMAIL_PASSWORD,
   },
   maxConnections: 1,
@@ -97,7 +95,7 @@ export const sendEmail = async (
   sendTo: string[]
 ) => {
   const mailOptions = {
-    from: '',
+    from: 'krasimir.xristov@outlook.com',
     to: sendTo,
     html: emailContent.body,
     subject: emailContent.subject,
